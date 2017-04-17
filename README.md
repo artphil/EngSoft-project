@@ -12,7 +12,7 @@ Este _setup_ destina-se à criação de ambientes para o desenvolvimento em C/C+
 desenvolvedora do Vagrant.
 
 No seu sistema nativo (Linux, MacOSX, Windows, ...) é necessário instalar o Vagrant e um provedor de VM's, como o VirtualBox.
-Depois de instalados, [este projeto](https://github.com/LorenaLunelli/SO-2017-1.git) deve estar no diretório raiz da máquina
+Depois de instalados, [este projeto](https://github.com/artphil7/EngSoft-project) deve estar no diretório raiz da máquina
 virtual que se deseja criar. Isto porque os arquivos ```Vagrantfile``` e ```bootstrap.sh``` serão os responsáveis pelas
 configurações do ambiente. Neste diretório, execute:
 
