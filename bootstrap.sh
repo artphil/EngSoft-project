@@ -2,9 +2,6 @@
 
 apt-get update
 
-# Apache
-apt-get install -y apache2
-
 # Unix utils
 
 apt-get install -y vim
