@@ -57,7 +57,35 @@ A lista completa de comandos pode ser encontrada
 
 ## Ativando o projeto
 
-TODO: Falar sobre Node.js, npm install
+O projeto é desenvolvido dividido entre backend e frontend. O backend é escrito
+em [Node.js](https://nodejs.org/en/), que é um plataforma para execução de
+Javascript. Uma analogia seria uma "JVM de Javascript", por assim dizer.
+O Node é um programa, e os pacotes para node são gerenciados através do
+[npm](https://www.npmjs.com). Uma analogia para o npm seria o pip do Python.
+Na máquina Vagrant, tanto Node quanto npm já estão instalados. Os pacotes
+que utilizamos no trabalho estão salvos no arquivo "packages.json", então
+quando começar a trabalhar, basta fazer um
+
+
+```
+npm install
+```
+
+
+que ele reconhece todos os pacotes e os instala para você. Talvez seja
+necessário rodar como sudo.
+
+
+Após os pacotes estarem instalados, basta ativar (também como sudo) o
+servidor:
+
+
+```
+node server.js
+```
+
+Neste ponto o servidor estará ativo. A próxima seção explicará como
+acessá-lo.
 
 
 ## REST APIs
@@ -86,7 +114,7 @@ Com ela se requisitam dados. Um exemplo, no nosso caso, é colocar no browser
 
 Ou, com o uso do programa [cURL](https://curl.haxx.se/):
 
-`O``curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://hostname/resource```
+```curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:4568/listRooms```
 
 
 ## Front-end stack
