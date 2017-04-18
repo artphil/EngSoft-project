@@ -117,6 +117,14 @@ Ou, com o uso do programa [cURL](https://curl.haxx.se/):
 ```curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:4568/listRooms```
 
 
+Um exemplo de requisição post para adicionar quartos:
+
+
+```
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"name": "Mordred room", "id": "109", "status": "vacant"}' http://127.0.0.1:4568/addRoom
+```
+
+
 ## Front-end stack
 
 
