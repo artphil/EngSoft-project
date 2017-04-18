@@ -86,7 +86,7 @@ Com ela se requisitam dados. Um exemplo, no nosso caso, é colocar no browser
 
 Ou, com o uso do programa [cURL](https://curl.haxx.se/):
 
-`O``curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://hostname/resource```
+```curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:4568/listRooms```
 
 
 ## Front-end stack
