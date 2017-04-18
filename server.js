@@ -13,7 +13,7 @@ app.get('/listRooms', function(request, response) {
 app.get('/roomDetail/:id', function (req, res) {
    fs.readFile( __dirname + '/rooms.json', 'utf8', function (err, data) {
        var rooms = JSON.parse(data),
-           room = rooms[req.params.id] 
+           room = rooms[req.params.id];
        res.end(JSON.stringify(room));
    });
 });

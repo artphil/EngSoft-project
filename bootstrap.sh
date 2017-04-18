@@ -30,9 +30,6 @@ wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master
 chsh -s $(which zsh) $(whoami)
 zsh
 
-# Change the oh my zsh default theme.
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="3den"/g' ~/.zshrc
-
 # npm fix: https://github.com/nodejs/node-v0.x-archive/issues/3911
 npm install npm -g
 npm update -g npm
