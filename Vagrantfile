@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 3001, host: 3001
 
   # Change the vagrant user's shell to use zsh
-  config.vm.provision :shell, inline: "chsh -s /bin/zsh vagrant"
+  # config.vm.provision :shell, inline: "chsh -s /bin/zsh vagrant"
 
   # Vundle install
   config.vm.provision :shell, privileged: false,

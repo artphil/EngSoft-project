@@ -26,9 +26,9 @@ apt-get install -y npm
 # Zsh (http://stackoverflow.com/questions/25763017/install-oh-my-zsh-on-a-vagrant-box-as-part-of-the-bootstrap-process)
 # Added zsh shell.
 apt-get install -y zsh
-wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 
-chsh -s $(which zsh) $(whoami)
-zsh
+#wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 
+#chsh -s $(which zsh) $(whoami)
+#zsh
 
 # npm fix: https://github.com/nodejs/node-v0.x-archive/issues/3911
 npm install npm -g
