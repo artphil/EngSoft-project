@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Requesting!</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <button onclick="requestRooms()">Show me the rooms!</button>
+    <div id="rooms"></div>
+
+    <script type="text/javascript">
+      var requestRooms = function() {
+        var roomsContainer = document.getElementById('rooms');
+
+        var impressor = function(jsonData) {
+            console.log(jsonData);
+
+            for (var key of Object.keys(jsonData)) {
+              var subElement = document.createElement('p');
+              subElement.innerHTML = jsonData[key]['name'];
+              roomsContainer.appendChild(subElement);
+            }
+        };
+
+        window.fetch('http://127.0.0.1:4568/listRooms')
+          .then(function(response) {
+            return response.json();
+          })
+          .then(impressor)
+          .catch(function(err) {
+            console.log("Oops, something went wrong!", err);
+          });
+      };
+    </script>
+  </body>
+</html>

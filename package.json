@@ -13,5 +13,8 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "cors": "^2.8.3"
   }
 }

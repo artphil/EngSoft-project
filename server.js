@@ -1,9 +1,11 @@
 var express = require('express'),
     fs = require('fs'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cors = require('cors');
 
 var app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/listRooms', function(request, response) {
   fs.readFile(__dirname + '/rooms.json', 'utf8', function(err, data) {
@@ -30,7 +32,7 @@ app.post('/addRoom', function(request, response) {
 
     if (rooms.hasOwnProperty(room.id)) {
       console.log('Room already exists');
-      response.status(500).send({title: 'Respondido!', desc: 'Respondemos sua solicitação!'});
+      response.status(500).send({'error': 'Room already exists'});
     } else {
       console.log('Including room ' + room.id);
       rooms[room.id] = room;
@@ -38,7 +40,6 @@ app.post('/addRoom', function(request, response) {
       response.status(200).send();
     }
   });
-
 });
 
 
