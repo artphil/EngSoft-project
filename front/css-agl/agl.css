@@ -1,0 +1,21 @@
+.col-lg-2 {
+    /*background-color: gold;
+    border: solid 1px #424242;*/
+    margin-top: 20px;
+    margin-bottom: : 20px;
+}
+.container {
+    margin-top: 40px;
+}
+.img-banner {
+    width: 500px;
+}
+.img-icon-w {
+    width: 50px;
+}
+.img-icon-h {
+    height: 50px;
+}
+.img-icon-mini {
+    height: 40px;
+}
