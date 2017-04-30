@@ -19,3 +19,7 @@
 .img-icon-mini {
     height: 40px;
 }
+.centralizado {
+    margin: 0 auto;
+    float: none;
+}
