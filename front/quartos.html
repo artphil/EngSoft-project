@@ -55,36 +55,9 @@
 
 
                 <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3" id="rooms" >
                                 <button type="button" class="btn btn-default btn-lg">
                                         101
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        102
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        103
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        104
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        105
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        106
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        107
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        108
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        109
-                                </button>
-                                <button type="button" class="btn btn-default btn-lg">
-                                        110
                                 </button>
 
                                 <img class="img-bar" src="img/cor_quarto.svg" alt="Responsive image" >
@@ -97,6 +70,30 @@
 
 </body>
 
+<script type="text/javascript">
+  var requestRooms = function() {
+    var roomsContainer = document.getElementById('rooms');
+
+    var impressor = function(jsonData) {
+        console.log(jsonData);
+
+        for (var key of Object.keys(jsonData)) {
+          var subElement = document.createElement('button');
+          subElement.innerHTML = jsonData[key]['name'];
+          roomsContainer.appendChild(subElement);
+        }
+    };
+
+    window.fetch('http://127.0.0.1:4568/listRooms')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(impressor)
+      .catch(function(err) {
+        console.log("Oops, something went wrong!", err);
+      });
+  };
+</script>
 
 <footer class="navbar-fixed-bottom">
         <center>
