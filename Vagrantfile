@@ -2,8 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "debian/contrib-jessie64"
+  #config.vm.box = "debian/contrib-jessie64"
 
+	config.vm.box = "v0rtex/xenial64"
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]

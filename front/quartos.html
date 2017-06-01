@@ -54,12 +54,12 @@
                 </div>
 
 
+                <button type="button" onclick="myRequestRooms()" class="btn btn-default">
+                        Atualiza
+                </button>
+
                 <div class="row">
                         <div class="col-md-3" id="rooms" >
-                                <button type="button" class="btn btn-default btn-lg">
-                                        101
-                                </button>
-
                                 <img class="img-bar" src="img/cor_quarto.svg" alt="Responsive image" >
                         </div>
                         <div class="col-md-9">
@@ -71,28 +71,48 @@
 </body>
 
 <script type="text/javascript">
-  var requestRooms = function() {
-    var roomsContainer = document.getElementById('rooms');
+var myRequestRooms = function() {
+        console.log("oi estou aqui");
 
-    var impressor = function(jsonData) {
-        console.log(jsonData);
+        var roomsContainer = document.getElementById('rooms');
 
-        for (var key of Object.keys(jsonData)) {
-          var subElement = document.createElement('button');
-          subElement.innerHTML = jsonData[key]['name'];
-          roomsContainer.appendChild(subElement);
-        }
-    };
+        var impressor = function(jsonData) {
+                console.log(jsonData);
 
-    window.fetch('http://127.0.0.1:4568/listRooms')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(impressor)
-      .catch(function(err) {
-        console.log("Oops, something went wrong!", err);
-      });
-  };
+                for (var key of Object.keys(jsonData)) {
+                        var buttonElement = document.createElement('button');
+                        buttonElement.innerHTML = jsonData[key]['name'];
+                        buttonElement.classList.append(["btn", "btn-lg"]);
+                        var status;
+                        if (jsonData[key]['status'] == "vacant")
+                        {
+                                status = "btn-default";
+                        }
+                        else  if (jsonData[key]['status'] == "occupied")
+                        {
+                                status = "btn-warning";
+                        }
+                        else  if (jsonData[key]['status'] == "reserved")
+                        {
+                                status = "btn-primary";
+                        }
+                        buttonElement.classList.append(status);
+                        roomsContainer.appendChild(buttonElement);
+                }
+        };
+        console.log("oi estou aqui");
+
+        window.fetch('http://127.0.0.1:4568/listRooms')
+        .then(function(response) {
+                console.log("GRRRUUUAAARRRRRRR");
+
+                return response.json();
+        })
+        .then(impressor)
+        .catch(function(err) {
+                console.log("Oops, something went wrong!", err);
+        });
+};
 </script>
 
 <footer class="navbar-fixed-bottom">
