@@ -82,7 +82,7 @@ var myRequestRooms = function() {
                 for (var key of Object.keys(jsonData)) {
                         var buttonElement = document.createElement('button');
                         buttonElement.innerHTML = jsonData[key]['name'];
-                        buttonElement.classList.append(["btn", "btn-lg"]);
+                        buttonElement.classList.add(["btn", "btn-lg"]);
                         var status;
                         if (jsonData[key]['status'] == "vacant")
                         {
@@ -96,7 +96,7 @@ var myRequestRooms = function() {
                         {
                                 status = "btn-primary";
                         }
-                        buttonElement.classList.append(status);
+                        buttonElement.classList.add(status);
                         roomsContainer.appendChild(buttonElement);
                 }
         };
