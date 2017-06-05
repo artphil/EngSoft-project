@@ -1,1 +1,38 @@
-{"101":{"name":"King Arthur suite","id":1,"status":"vacant"},"102":{"name":"Morgana suite","id":2,"status":"occupied"},"103":{"name":"Merlin suite","id":3,"status":"reserved"},"109":{"name":"Mordred room","id":"109","status":"vacant"},"110":{"name":"Galahad room","id":"110","status":"vacant"},"114":{"name":"Lancelot room","id":"114","status":"vacant"}}
+{
+        "101":
+        {
+                "name":"King Arthur suite",
+                "id":1,
+                "status":"vacant"
+        },
+        "102":
+        {
+                "name":"Morgana suite",
+                "id":2,
+                "status":"occupied"
+        },
+        "103":
+        {
+                "name":"Merlin suite",
+                "id":3,
+                "status":"reserved"
+        },
+        "109":
+        {
+                "name":"Mordred room",
+                "id":"109",
+                "status":"vacant"
+        },
+        "110":
+        {
+                "name":"Galahad room",
+                "id":"110",
+                "status":"vacant"
+        },
+        "114":
+        {
+                "name":"Lancelot room",
+                "id":"114",
+                "status":"vacant"
+        }
+}

@@ -26,7 +26,7 @@
 </head>
 
 
-<body>
+<body onload="myRequestRooms()">
         <div class="container">
                 <div class="row">
                         <div class="col-lg-12">
@@ -54,35 +54,41 @@
                 </div>
 
 
-                <button type="button" onclick="myRequestRooms()" class="btn btn-default">
+                <!-- <button type="button" onclick="myRequestRooms()" class="btn btn-default">
                         Atualiza
-                </button>
+                </button> -->
 
                 <div class="row">
-                        <div class="col-md-3" id="rooms" >
-                                <img class="img-bar" src="img/cor_quarto.svg" alt="Responsive image" >
-                        </div>
+                        <div class="col-md-3" id="rooms" > </div>
                         <div class="col-md-9">
 
                         </div>
+                </div><div class="row">
+                        <div class="col-md-3">
+                                <img class="img-bar" src="img/cor_quarto.svg" alt="Responsive image" >
+                        </div>
+
                 </div>
         </div>
 
 </body>
 
 <script type="text/javascript">
-var myRequestRooms = function() {
+var myRequestRooms = function()
+{
         console.log("oi estou aqui");
 
         var roomsContainer = document.getElementById('rooms');
 
-        var impressor = function(jsonData) {
+        var impressor = function(jsonData)
+        {
                 console.log(jsonData);
 
-                for (var key of Object.keys(jsonData)) {
+                for (var key of Object.keys(jsonData))
+                {
                         var buttonElement = document.createElement('button');
-                        buttonElement.innerHTML = jsonData[key]['name'];
-                        buttonElement.classList.append(["btn", "btn-lg"]);
+                        buttonElement.innerHTML = key;
+                        buttonElement.classList.add(["btn"]);
                         var status;
                         if (jsonData[key]['status'] == "vacant")
                         {
@@ -96,20 +102,22 @@ var myRequestRooms = function() {
                         {
                                 status = "btn-primary";
                         }
-                        buttonElement.classList.append(status);
+                        buttonElement.classList.add(status);
                         roomsContainer.appendChild(buttonElement);
                 }
         };
         console.log("oi estou aqui");
 
         window.fetch('http://127.0.0.1:4568/listRooms')
-        .then(function(response) {
+        .then(function(response)
+        {
                 console.log("GRRRUUUAAARRRRRRR");
 
                 return response.json();
         })
         .then(impressor)
-        .catch(function(err) {
+        .catch(function(err)
+        {
                 console.log("Oops, something went wrong!", err);
         });
 };
