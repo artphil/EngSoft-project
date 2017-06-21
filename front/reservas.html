@@ -52,11 +52,27 @@
                                 <input type="text" class="form-control" placeholder="Nome ou ID" aria-describedby="clt-name">
 
                         </div>
-                        <div class="input-group botoes">
+                        <div class="input-group">
                                 <span class="input-group-addon" id="data">Data</span>
-                                <input type="text" class="form-control" placeholder="Data" aria-describedby="data">
+                                <input type="date" class="form-control" placeholder="Data" aria-describedby="data">
+                        </div>
+                        <button type="button" class="btn btn-default botoes">
+                        Pesquisar
+                        </button>
+
+                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Reservas</h3>
+                                </div>
+                                <div class="panel-body list-group">
+                                        <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim (reserva recente)</button>
+                                        <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim</button>
+                                        <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim</button>
+                                        <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim (reserva antiga)</button>
+                                </div>
                         </div>
                 </div>
+
                 <div class="col-lg-6 col-sm-12">
                         <div class="input-group botoes">
                                 <span class="input-group-addon" id="rsv-id">ID</span>
@@ -72,9 +88,10 @@
                                 <span class="input-group-addon" id="clt-id">ID</span>
                                 <input type="text" class="form-control" placeholder="Cliente ID" aria-describedby="clt-id">
                         </div>
-                        <div class="panel panel-default">
+                        <div>
+                        <div class="panel panel-default col-lg-6 col-sm-5">
                                 <div class="panel-heading">
-                                        <h3 class="panel-title">Serviços</h3>
+                                        <h3 class="panel-title">Serviços solicitados</h3>
                                 </div>
                                 <div class="panel-body list-group">
                                         <button type="button" class="list-group-item">01 - id - Nome - Valor</button>
@@ -82,8 +99,20 @@
                                         <button type="button" class="list-group-item">03 - id - Nome - Valor</button>
                                 </div>
                         </div>
+                        <div class="col-lg-1 col-sm-1"></div>
+                        <div class="panel panel-default col-lg-6 col-sm-5">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Todos serviços</h3>
+                                </div>
+                                <div class="panel-body list-group">
+                                        <button type="button" class="list-group-item">01 - id - Nome - Valor</button>
+                                        <button type="button" class="list-group-item">02 - id - Nome - Valor</button>
+                                        <button type="button" class="list-group-item">03 - id - Nome - Valor</button>
+                                </div>
+                        </div>
+                        </div>
                         <button type="button" class="btn btn-default botoes">
-                                Alterar
+                                Nova
                         </button>
                         <button type="button" class="btn btn-default">
                                 Incluir serviço

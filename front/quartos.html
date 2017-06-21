@@ -59,34 +59,34 @@
         </button> -->
 
                 <div class="row">
-                        <div class="col-lg-3 col-sm-12" id="rooms"> </div>
+                        <div class="col-lg-3 col-sm-12">
+                                <div id="rooms"></div>
+                                <img class="img-bar" src="img/cor_quarto.svg" alt="Responsive image"></img>
+                        </div>
                         <div class="col-lg-9 col-sm-12">
                                 <div class="input-group">
-                                        <span class="input-group-addon" id="qrt-num">Quarto</span>
-                                        <input type="text" class="form-control" placeholder="Quarto" aria-describedby="qrt-num">
+                                        <span class="input-group-addon">Quarto</span>
+                                        <input type="text" class="form-control" id="qrt-num" placeholder="Quarto" aria-describedby="qrt-num">
                                 </div>
                                 <div class="input-group botoes">
                                         <select type="select" id="qrt-stat" class="form-control">
-                                        <option value="">Estado</option>
-                                        <option value="">Disponivel</option>
-                                        <option value="">Reservado</option>
-                                        <option value="">Ocupado</option>
-                                        <option value="">Indisponivel</option>
+                                        <option value="0">Estado</option>
+                                        <option value="1">Disponivel</option>
+                                        <option value="2">Reservado</option>
+                                        <option value="3">Ocupado</option>
+                                        <option value="4">Indisponivel</option>
                                 </select>
                                 </div>
 
 
                                 <div class="form-group">
-                                        <span class="input-group-addon" id="qrt-desc">Descrição</span>
-                                        <textarea class="form-control" rows="6" id="comment"></textarea>
+                                        <span class="input-group-addon">Descrição</span>
+                                        <textarea type="text" class="form-control" id="qrt-desc" rows="6" textAreaContent="ooooo"></textarea>
                                 </div>
+                                <button type="button" class="btn btn-default botoes">
+                                        Alterar
+                                </button>
                         </div>
-                </div>
-                <div class="row">
-                        <div class="col-md-3">
-                                <img class="img-bar" src="img/cor_quarto.svg" alt="Responsive image">
-                        </div>
-
                 </div>
         </div>
 
@@ -106,7 +106,7 @@
                                 buttonElement.innerHTML = key;
                                 buttonElement.classList.add("btn");
                                 buttonElement.classList.add("botao");
-                                buttonElement.setAttribute("onclick", "window.location='index.html'");
+                                buttonElement.setAttribute("onclick", "fillRooms(" + key + ");");
                                 var status;
                                 if (jsonData[key]['status'] == "vacant") {
                                         status = "btn-default";
@@ -127,6 +127,42 @@
                         .then(function(response) {
                                 console.log("GRRRUUUAAARRRRRRR");
 
+                                return response.json();
+                        })
+                        .then(impressor)
+                        .catch(function(err) {
+                                console.log("Oops, something went wrong!", err);
+                        });
+        };
+</script>
+
+<script type="text/javascript">
+        var fillRooms = function(idRooms) {
+                console.log("oi estou aqui");
+
+                var roomsNumero = document.getElementById('qrt-num');
+                var roomsDesc = document.getElementById('qrt-desc');
+                var roomsStat = document.getElementById('qrt-stat');
+
+                var impressor = function(jsonData) {
+                        var numero = jsonData[idRooms]['id']
+
+                        roomsNumero.setAttribute("value", "" + idRooms + "");
+                        roomsDesc.value = "Ainda não implementamos a descrição do quarto";
+
+                        if (jsonData[idRooms]['status'] == "vacant") {
+                                roomsStat.selectedIndex = 1;
+                        } else if (jsonData[idRooms]['status'] == "occupied") {
+                                roomsStat.selectedIndex = 3;
+                        } else if (jsonData[idRooms]['status'] == "reserved") {
+                                roomsStat.selectedIndex = 2;
+                        } else if (jsonData[idRooms]['status'] == "unusable") {
+                                roomsStat.selectedIndex = 4;
+                        }
+                }
+
+                window.fetch('http://127.0.0.1:80/listRooms')
+                        .then(function(response) {
                                 return response.json();
                         })
                         .then(impressor)
