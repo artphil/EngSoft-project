@@ -48,23 +48,23 @@
         <div class="row">
                 <div class="col-lg-3 col-sm-12">
                         <div class="input-group botoes">
-                                <span class="input-group-addon" id="clt-name">Cliente</span>
-                                <input type="text" class="form-control" placeholder="Nome ou ID" aria-describedby="clt-name">
+                                <span class="input-group-addon">Cliente</span>
+                                <input type="text" class="form-control" id="srch-name" placeholder="Nome ou ID"></input>
 
                         </div>
                         <div class="input-group">
-                                <span class="input-group-addon" id="data">Data</span>
-                                <input type="date" class="form-control" placeholder="Data" aria-describedby="data">
+                                <span class="input-group-addon">Data</span>
+                                <input type="date" class="form-control" id="srch-date" placeholder="Data"></input>
                         </div>
-                        <button type="button" class="btn btn-default botoes">
-                        Pesquisar
+                        <button type="button" class="btn btn-default botoes" onclick="myRequestReservs">
+                                Pesquisar
                         </button>
 
                         <div class="panel panel-default">
                                 <div class="panel-heading">
                                         <h3 class="panel-title">Reservas</h3>
                                 </div>
-                                <div class="panel-body list-group">
+                                <div class="panel-body list-group" id="reserv-srch">
                                         <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim (reserva recente)</button>
                                         <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim</button>
                                         <button type="button" class="list-group-item">Nome Cliente - id - data inicio - data fim</button>
@@ -76,40 +76,40 @@
                 <div class="col-lg-6 col-sm-12">
                         <div class="input-group botoes">
                                 <span class="input-group-addon" id="rsv-id">ID</span>
-                                <input type="text" class="form-control" placeholder="ID" aria-describedby="rsv-id">
+                                <input type="text" class="form-control" placeholder="ID"></input>
                                 <span class="input-group-addon" id="rsv-dini">Data inicio</span>
-                                <input type="text" class="form-control" placeholder="Data inicio" aria-describedby="rsv-dini">
+                                <input type="text" class="form-control" placeholder="Data inicio"></input>
                                 <span class="input-group-addon" id="rsv-dfim">Data Fim</span>
-                                <input type="text" class="form-control" placeholder="Data Fim" aria-describedby="rsv-dfim">
+                                <input type="text" class="form-control" placeholder="Data Fim"></input>
                         </div>
                         <div class="input-group botoes">
                                 <span class="input-group-addon" id="clt-name">Cliente</span>
-                                <input type="text" class="form-control" placeholder="Nome completo" aria-describedby="clt-name">
+                                <input type="text" class="form-control" placeholder="Nome completo"></input>
                                 <span class="input-group-addon" id="clt-id">ID</span>
-                                <input type="text" class="form-control" placeholder="Cliente ID" aria-describedby="clt-id">
+                                <input type="text" class="form-control" placeholder="Cliente ID"></input>
                         </div>
                         <div>
-                        <div class="panel panel-default col-lg-6 col-sm-5">
-                                <div class="panel-heading">
-                                        <h3 class="panel-title">Serviços solicitados</h3>
+                                <div class="panel panel-default col-lg-6 col-sm-5">
+                                        <div class="panel-heading">
+                                                <h3 class="panel-title">Serviços solicitados</h3>
+                                        </div>
+                                        <div class="panel-body list-group">
+                                                <button type="button" class="list-group-item">01 - id - Nome - Valor</button>
+                                                <button type="button" class="list-group-item">02 - id - Nome - Valor</button>
+                                                <button type="button" class="list-group-item">03 - id - Nome - Valor</button>
+                                        </div>
                                 </div>
-                                <div class="panel-body list-group">
-                                        <button type="button" class="list-group-item">01 - id - Nome - Valor</button>
-                                        <button type="button" class="list-group-item">02 - id - Nome - Valor</button>
-                                        <button type="button" class="list-group-item">03 - id - Nome - Valor</button>
+                                <div class="col-lg-1 col-sm-1"></div>
+                                <div class="panel panel-default col-lg-6 col-sm-5">
+                                        <div class="panel-heading">
+                                                <h3 class="panel-title">Todos serviços</h3>
+                                        </div>
+                                        <div class="panel-body list-group">
+                                                <button type="button" class="list-group-item">01 - id - Nome - Valor</button>
+                                                <button type="button" class="list-group-item">02 - id - Nome - Valor</button>
+                                                <button type="button" class="list-group-item">03 - id - Nome - Valor</button>
+                                        </div>
                                 </div>
-                        </div>
-                        <div class="col-lg-1 col-sm-1"></div>
-                        <div class="panel panel-default col-lg-6 col-sm-5">
-                                <div class="panel-heading">
-                                        <h3 class="panel-title">Todos serviços</h3>
-                                </div>
-                                <div class="panel-body list-group">
-                                        <button type="button" class="list-group-item">01 - id - Nome - Valor</button>
-                                        <button type="button" class="list-group-item">02 - id - Nome - Valor</button>
-                                        <button type="button" class="list-group-item">03 - id - Nome - Valor</button>
-                                </div>
-                        </div>
                         </div>
                         <button type="button" class="btn btn-default botoes">
                                 Nova
@@ -123,6 +123,10 @@
 
 
 </body>
+
+<!-- link para o arquivos JS do projeto -->
+<script src="js-agl/reservas.js"></script>
+<script src="js-agl/clientes.js"></script>
 
 <footer class="navbar-fixed-bottom">
         <center>

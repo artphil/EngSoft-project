@@ -50,16 +50,16 @@
         <div class="row">
                 <div class="col-lg-3 col-sm-1">
                         <div class="input-group botoes">
-                                <span class="input-group-addon" id="srch-name">Nome</span>
-                                <input type="text" class="form-control" placeholder="Nome" aria-describedby="srch-name">
+                                <span class="input-group-addon">Nome</span>
+                                <input type="text" class="form-control" id="srch-name" placeholder="Nome">
 
                         </div>
                         <div class="input-group botoes">
-                                <span class="input-group-addon" id="srch-cpf">CPF</span>
-                                <input type="text" class="form-control" placeholder="CPF" aria-describedby="srch-cpf">
+                                <span class="input-group-addon">CPF</span>
+                                <input type="text" class="form-control" id="srch-cpf" placeholder="CPF">
 
                         </div>
-                        <button type="button" class="btn btn-default botoes">
+                        <button type="button" class="btn btn-default botoes" onclick="">
                                 Buscar
                         </button>
                         <div class="panel panel-default">
@@ -73,21 +73,21 @@
                 </div>
                 <div class="col-lg-6 col-sm-10">
                         <div class="input-group botoes">
-                                <span class="input-group-addon" id="clt-name">Nome</span>
-                                <input type="text" class="form-control" placeholder="Nome completo" aria-describedby="clt-name">
+                                <span class="input-group-addon">Nome</span>
+                                <input type="text" class="form-control"  id="clt-name" placeholder="Nome completo">
 
                         </div>
                         <div class="input-group botoes">
-                                <span class="input-group-addon" id="clt-cpf">CPF</span>
-                                <input type="text" class="form-control" placeholder="123.456.789-00" aria-describedby="clt-cpf"></input>
-                                <span class="input-group-addon" id="clt-id">ID</span>
-                                <input type="text" class="form-control" placeholder="Id" aria-describedby="clt-id"></input>
+                                <span class="input-group-addon">CPF</span>
+                                <input type="text" class="form-control"  id="clt-cpf" placeholder="123.456.789-00"></input>
+                                <span class="input-group-addon">ID</span>
+                                <input type="text" class="form-control" id="clt-id" placeholder="Id"></input>
                         </div>
                         <div class="panel panel-default">
                                 <div class="panel-heading">
                                         <h3 class="panel-title">Reservas</h3>
                                 </div>
-                                <div class="panel-body list-group" id="clients">
+                                <div class="panel-body list-group" id="reservs">
                                         <button type="button" class="list-group-item">reserva atual ou mais recente (id - data inicio - data fim)</button>
                                         <button type="button" class="list-group-item">demais reservas</button>
                                         <button type="button" class="list-group-item">...</button>
@@ -108,7 +108,6 @@
 </body>
 
 <!-- link para o arquivos JS do projeto -->
-<script src="js-agl/reservas.js"></script>
 <script src="js-agl/clientes.js"></script>
 
 <footer class="navbar-fixed-bottom">
