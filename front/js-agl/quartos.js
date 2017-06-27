@@ -89,7 +89,7 @@ var saveRooms = function() {
         }
         node.status = stat.value;
 
-        fetch('http://127.0.0.1:80/listRooms', { // Definir a url correta
+        fetch('http://127.0.0.1:80/postRoom', { // Definir a url correta
                 method: "POST",
                 body: node
         });
